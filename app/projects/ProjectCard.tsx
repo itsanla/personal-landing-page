@@ -47,7 +47,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <motion.div
-      className=""
+      className="h-full flex flex-col"
       whileHover={{ scale: 1.02 }}
       transition={{ duration: 0.3 }}
       style={{ perspective: 1000 }}
@@ -69,7 +69,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
       )}
 
-      <div className="p-6">
+      <div className="p-6 flex-1 flex flex-col">
         {/* Header */}
         <div className="flex justify-between items-start mb-4">
           <div className="flex items-center gap-2">
@@ -140,85 +140,88 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           />
         </div>
 
-        {/* Metrics section */}
-        {project.metrics && (
-          <div className="mb-6 p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700">
-            <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
-              <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-              Project Metrics
-            </h4>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
-              {project.metrics.linesOfCode && (
-                <div className="text-center">
-                  <div className="font-bold text-gray-900 dark:text-white">
-                    {project.metrics.linesOfCode.toLocaleString()}
+        {/* Bottom Section (Metrics, Learnings, Buttons) - Aligned using mt-auto */}
+        <div className="mt-auto space-y-6">
+          {/* Metrics section */}
+          {project.metrics && (
+            <div className="p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700">
+              <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                Project Metrics
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                {project.metrics.linesOfCode && (
+                  <div className="text-center">
+                    <div className="font-bold text-gray-900 dark:text-white">
+                      {project.metrics.linesOfCode.toLocaleString()}
+                    </div>
+                    <div className="text-gray-600 dark:text-gray-400">Lines of Code</div>
                   </div>
-                  <div className="text-gray-600 dark:text-gray-400">Lines of Code</div>
-                </div>
-              )}
-              {project.metrics.performance && (
-                <div className="text-center">
-                  <div className="font-bold text-gray-900 dark:text-white">
-                    {project.metrics.performance}
+                )}
+                {project.metrics.performance && (
+                  <div className="text-center">
+                    <div className="font-bold text-gray-900 dark:text-white">
+                      {project.metrics.performance}
+                    </div>
+                    <div className="text-gray-600 dark:text-gray-400">Performance</div>
                   </div>
-                  <div className="text-gray-600 dark:text-gray-400">Performance</div>
-                </div>
-              )}
-              {project.metrics.users && (
-                <div className="text-center">
-                  <div className="font-bold text-gray-900 dark:text-white">
-                    {project.metrics.users}+
+                )}
+                {project.metrics.users && (
+                  <div className="text-center">
+                    <div className="font-bold text-gray-900 dark:text-white">
+                      {project.metrics.users}+
+                    </div>
+                    <div className="text-gray-600 dark:text-gray-400">Users</div>
                   </div>
-                  <div className="text-gray-600 dark:text-gray-400">Users</div>
-                </div>
-              )}
+                )}
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {/* learnings section */}
-        {project.learnings && project.learnings.length > 0 && (
-          <div className="mb-6">
-            <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
-              <span className="w-2 h-2 bg-green-500 rounded-full"></span>
-              Key Learnings
-            </h4>
-            <div className="flex flex-wrap gap-2">
-              {project.learnings.map((learning, index) => (
-                <span
-                  key={index}
-                  className="px-2 py-1 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 text-xs rounded border border-green-200 dark:border-green-800"
-                >
-                  {learning}
-                </span>
-              ))}
+          {/* learnings section */}
+          {project.learnings && project.learnings.length > 0 && (
+            <div className="">
+              <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+                <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                Key Learnings
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {project.learnings.map((learning, index) => (
+                  <span
+                    key={index}
+                    className="px-2 py-1 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 text-xs rounded border border-green-200 dark:border-green-800"
+                  >
+                    {learning}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-3 pt-2">
-          <Link
-            href={`/projects/${project.slug}`}
-            aria-label={`Case Study of ${project.title}`}
-            className="flex-1 text-center px-4 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-md hover:shadow-lg"
-          >
-            Case Study
-          </Link>
-          <Link
-            href={project.demoLink}
-            target="_blank"
-            className="flex-1 text-center px-4 py-2.5 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white border border-gray-300 dark:border-gray-600 font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-300"
-          >
-            Live Demo
-          </Link>
-          <Link
-            href={project.githubLink}
-            target="_blank"
-            className="flex-1 text-center px-4 py-2.5 bg-gradient-to-r from-gray-800 to-gray-900 text-white font-medium rounded-lg hover:from-black hover:to-gray-900 transition-all duration-300 shadow-md hover:shadow-lg"
-          >
-            GitHub
-          </Link>
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Link
+              href={`/projects/${project.slug}`}
+              aria-label={`Case Study of ${project.title}`}
+              className="flex-1 text-center px-4 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-md hover:shadow-lg"
+            >
+              Case Study
+            </Link>
+            <Link
+              href={project.demoLink}
+              target="_blank"
+              className="flex-1 text-center px-4 py-2.5 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white border border-gray-300 dark:border-gray-600 font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-300"
+            >
+              Live Demo
+            </Link>
+            <Link
+              href={project.githubLink}
+              target="_blank"
+              className="flex-1 text-center px-4 py-2.5 bg-gradient-to-r from-gray-800 to-gray-900 text-white font-medium rounded-lg hover:from-black hover:to-gray-900 transition-all duration-300 shadow-md hover:shadow-lg"
+            >
+              GitHub
+            </Link>
+          </div>
         </div>
       </div>
     </motion.div>

@@ -7,8 +7,9 @@ export async function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const project = projects.find((p) => p.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const project = projects.find((p) => p.slug === resolvedParams.slug);
 
   if (!project) {
     return {
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
   const title = `${project.title} - ${project.tagline}`;
   const description = `${project.tagline} Built with ${project.stack.slice(0, 3).join(", ")}. ${project.problem.slice(0, 120)}...`;
-  const imageUrl = project.image ? project.image : "/profile.png";
+  const imageUrl = project.image ? project.image : "/pfp.jpeg";
 
   return {
     title,
@@ -53,8 +54,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const project = projects.find((p) => p.slug === params.slug);
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  const project = projects.find((p) => p.slug === resolvedParams.slug);
 
   if (!project) {
     return <Custom404 />

@@ -34,7 +34,7 @@ export default function Projects() {
           transition={{ duration: 0.4, ease: "easeOut" }}
         >
           <div className="inline-block px-4 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium rounded-full mb-4">
-          CASE STUDIES
+            CASE STUDIES
           </div>
           <h2
             id="projects-heading"
@@ -42,7 +42,7 @@ export default function Projects() {
           >
             Projects that define my work.
           </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Here are some real-world case studies where I&apos;ve applied automation, AI, and full-stack development to solve meaningful problems.
           </p>
         </motion.div>
@@ -69,11 +69,11 @@ export default function Projects() {
                 y: -8,
                 transition: { duration: 0.2, ease: "easeOut" },
               }}
-              className="relative rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:shadow-xl transition-shadow duration-300"
+              className="relative rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hover:shadow-xl transition-shadow duration-300 flex flex-col"
             >
               {project.featured && (
                 <span className="absolute top-3 right-3 px-3 py-1 text-xs font-semibold bg-blue-600 text-white rounded-full shadow-md z-10">
-                Featured
+                  Featured
                 </span>
               )}
               <ProjectCard project={project} />

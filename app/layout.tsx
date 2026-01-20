@@ -62,11 +62,11 @@ export const metadata: Metadata = {
     siteName: "Anla Harpanda - Web Developer Portfolio",
     images: [
       {
-        url: "/profile.png",
+        url: "/pfp.jpeg",
         width: 1200,
         height: 630,
         alt: "Anla Harpanda - Full Stack Web Developer Portfolio",
-        type: "image/png",
+        type: "image/jpeg",
       },
     ],
   },
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Anla Harpanda | Full Stack Web Developer",
     description: "Full Stack Web Developer & UI/UX Designer. Building scalable web applications with modern technologies. AWS Certified.",
-    images: ["/profile.png"],
+    images: ["/pfp.jpeg"],
     creator: "@anlaharpanda",
   },
   icons: {
@@ -121,7 +121,7 @@ export default function RootLayout({
               "@type": "Person",
               name: "Anla Harpanda",
               url: "https://www.linkedin.com/in/anlaharpanda",
-              image: "/profile.png",
+              image: "/pfp.jpeg",
               jobTitle: "Full Stack Web Developer & UI/UX Designer",
               description: "Full Stack Web Developer & UI/UX Designer specializing in Express.js, Next.js, Laravel, Vue.js, and React",
               sameAs: [

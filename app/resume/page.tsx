@@ -167,7 +167,7 @@ export default function Resume() {
             {projects.map((project, i) => (
               <motion.div
                 key={project.title}
-                className="p-6 border border-gray-200 dark:border-gray-700 rounded-xl bg-gray-50 dark:bg-gray-900 hover:shadow-lg transition"
+                className="p-6 border border-gray-200 dark:border-gray-700 rounded-xl bg-gray-50 dark:bg-gray-900 hover:shadow-lg transition flex flex-col"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.2 }}
@@ -261,7 +261,7 @@ export default function Resume() {
 
                 <Link
                   href={project.link}
-                  className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 text-sm font-medium"
+                  className="mt-auto inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 text-sm font-medium pt-4"
                 >
                   View Case Study <ExternalLink className="w-4 h-4" />
                 </Link>
