@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     siteName: "Anla Harpanda - Web Developer Portfolio",
     images: [
       {
-        url: "/Banner.png",
+        url: "/profile.png",
         width: 1200,
         height: 630,
         alt: "Anla Harpanda - Full Stack Web Developer Portfolio",
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Anla Harpanda | Full Stack Web Developer",
     description: "Full Stack Web Developer & UI/UX Designer. Building scalable web applications with modern technologies. AWS Certified.",
-    images: ["/Banner.png"],
+    images: ["/profile.png"],
     creator: "@anlaharpanda",
   },
   icons: {
@@ -121,7 +121,7 @@ export default function RootLayout({
               "@type": "Person",
               name: "Anla Harpanda",
               url: "https://www.linkedin.com/in/anlaharpanda",
-              image: "/Banner.png",
+              image: "/profile.png",
               jobTitle: "Full Stack Web Developer & UI/UX Designer",
               description: "Full Stack Web Developer & UI/UX Designer specializing in Express.js, Next.js, Laravel, Vue.js, and React",
               sameAs: [
@@ -155,7 +155,7 @@ export default function RootLayout({
         <meta name="google-site-verification" content="your-google-verification-code" />
         <link rel="icon" href="/itsanla-logo.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/itsanla-logo.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="manifest" href="/manifest.json" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://va.vercel-scripts.com" />
@@ -164,6 +164,7 @@ export default function RootLayout({
 
       </head>
       <body
+        suppressHydrationWarning
         className={`${roboto.className}  antialiased min-h-screen bg-white text-black dark:bg-gray-900 dark:text-white`}
       >
         <noscript>

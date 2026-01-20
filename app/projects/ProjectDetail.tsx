@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import projects from "./dataProjects";
+import projects from "../../data/projects";
 import Custom404 from "../not-found";
 import { ProjectStructuredData } from "@/app/components/StructuredData";
 

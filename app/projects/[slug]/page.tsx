@@ -1,5 +1,5 @@
 import Custom404 from "@/app/not-found";
-import projects from "../dataProjects";
+import projects from "../../../data/projects";
 import ProjectDetail from "../ProjectDetail";
 import { Metadata } from "next";
 

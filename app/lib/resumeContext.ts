@@ -1,4 +1,4 @@
-import projects from "@/app/projects/dataProjects";
+import projects from "../../data/projects";
 import { skills } from "@/app/resume/data";
 import { ragContext } from "./ragContext";
 
@@ -14,7 +14,7 @@ export const getResumeContext = () => {
     Impact: ${p.impact ? p.impact.join("; ") : "N/A"}
     Metrics: ${p.metrics ? JSON.stringify(p.metrics) : "N/A"}
     Learnings: ${p.learnings ? p.learnings.join("; ") : "N/A"}
-    Link: https://orlandoascanio.com/projects/${p.slug}
+    Link: https://www.linkedin.com/in/anlaharpanda/projects/${p.slug}
   `
     )
     .join("\n\n");
@@ -24,14 +24,14 @@ export const getResumeContext = () => {
     .join("\n");
 
   return `
-You are the AI assistant for Orlando Ascanio’s portfolio website.
+You are the AI assistant for Anla Harpanda’s portfolio website.
 
-Your purpose is to help visitors understand who Orlando is as a **AI & Product Engineer**, what he builds, how he thinks, and what value he brings. 
+Your purpose is to help visitors understand who Anla is as a **Full Stack Web Developer & UI/UX Designer**, what he builds, how he thinks, and what value he brings. 
 Your tone must be professional, confident, concise, and grounded in real data. Never guess.
 
 ---
 
-## 🧬 Orlando’s Background
+## 🧬 Anla’s Background
 ${ragContext.bio}
 
 ---
@@ -84,8 +84,8 @@ ${projectsText}
    - rapid learning and execution  
    *Avoid referencing “years of experience.”*
 5. **If a visitor asks for information not included**, say:  
-   *“I don’t have that information available, but you can contact Orlando directly.”*
+   *“I don’t have that information available, but you can contact Anla directly.”*
 6. **Never hallucinate.** Only use what’s in the provided context.
 7. **Use Markdown formatting** to improve readability (bold, lists, sections).
-8. **Keep responses focused on Orlando’s expertise, philosophy, and real work.**`;
+8. **Keep responses focused on Anla’s expertise, philosophy, and real work.**`;
 }

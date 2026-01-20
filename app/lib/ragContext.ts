@@ -1,6 +1,6 @@
 export const ragContext = {
   bio: `
-    I am Orlando Ascanio, a AI & Product Engineer with the mindset of a founder and 
+    I am Anla Harpanda, a Full Stack Web Developer & UI/UX Designer with the mindset of a founder and 
     the discipline of a craftsman. I build intelligent, user-centric systems that combine 
     engineering, product thinking, and AI capability to solve real problems.
 
@@ -108,7 +108,7 @@ export const ragContext = {
 
   contact: {
     email: "operation927@gmail.com",
-    linkedin: "https://linkedin.com/in/orlando-ascanio-dev",
+    linkedin: "https://www.linkedin.com/in/anlaharpanda",
     github: "https://github.com/Gojer16",
     location: "Remote"
   }

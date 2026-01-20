@@ -68,7 +68,7 @@ export default function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="relative w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80">
+          <div className="relative w-48 h-48 md:w-64 md:h-64 lg:w-90 lg:h-120">
             <Image
               src="/profile.png"
               alt="Anla Harpanda - Full Stack Web Developer"
